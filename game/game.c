@@ -10,13 +10,13 @@
 #include <stdbool.h>
 #include <string.h>
 
-Game* createGame()
+Game *createGame()
 {
-	Game* newGame = malloc(sizeof(Game));
+	Game *newGame = malloc(sizeof(Game));
 
-	Room** rooms = createRooms();
+	Room **rooms = createRooms();
 
-	Player* player = createPlayer(1, "Player", rooms[0]);
+	Player *player = createPlayer(1, "Player", rooms[0]);
 
 	newGame->player = player;
 	newGame->rooms = rooms;
@@ -24,7 +24,7 @@ Game* createGame()
 	return newGame;
 }
 
-void freeGame(Game* game)
+void freeGame(Game *game)
 {
 	freePlayer(game->player);
 
@@ -37,14 +37,15 @@ void freeGame(Game* game)
 	free(game);
 }
 
-void startGame(const Game* game)
+void startGame(const Game *game)
 {
 	printf("Welcome to the game!\n");
 
 	printf("You are in the %s\n", game->player->currentRoom->description);
 
 	// probably better would be to use condition variable for loop
-	while (true) {
+	while (true)
+	{
 		char userInput[256];
 
 		printf("Enter a direction (n, s, e, w) or exit to stop the game: ");

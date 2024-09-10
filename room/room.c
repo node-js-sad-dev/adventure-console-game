@@ -254,6 +254,10 @@ void attachRooms(const Direction* direction, Room* room, Room** rooms)
     }
 }
 
+void connectAllRoomsNew(Room ** rooms)
+{
+
+}
 
 void connectAllRooms(Room** rooms)
 {
